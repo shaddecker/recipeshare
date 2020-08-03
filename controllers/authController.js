@@ -31,7 +31,7 @@ router.post("/signup", (req, res) => {
           const token = jwt.sign(
             {
               username: newUser.username,
-              id: newUser.id,
+              userId: newUser.id,
             },
             process.env.JWT_SECRET,
             {
@@ -40,7 +40,9 @@ router.post("/signup", (req, res) => {
           );
           console.log(token);
           res.cookie("jwt", token); // SEND A NEW COOKIE TO THE BROWSER TO STORE TOKEN
+          console.log("here");
           res.redirect(`/users/profile/${newUser.id}`);
+          console.log("here now");
         })
         .catch((err) => {
           console.log(err);
