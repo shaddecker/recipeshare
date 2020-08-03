@@ -1,40 +1,24 @@
 const express = require("express");
 const router = express.Router();
 
-const User = require('../models').User;
-const Recipes = require('../models').RecipeHeaders;
+const UserModel = require("../models").User;
 
-
-//user profile path
+// GET USERS PROFILE
 router.get("/profile/:id", async (req, res) => {
-  // IF USER ID FROM TOKEN MATCHES THE REQUESTED ENDPOINT, LET THEM IN
-  console.log("here");
-  if (req.user.id == req.params.id) {
-    const userProfile  = await User.findByPk(req.params.id, {
-      include: [
-        {
-          model: Receipes,
-          attributes: ["id", "lastname","firstname"],
-        },
-      ],
-    });
-    console.log("here");
-      res.render("users/profile.ejs", { user: userProfile,});
-  }else{
-    res.redirect("/");
-  }
+ const userProfile = await  UserModel.findByPk(req.params.id)
+  res.render("users/profile.ejs", { user: userProfile });
 });
+
 
 //PUT an update route
 router.put("/profile/:id", async (req, res) => {
-  const updatedUser = await User.update(req.body, 
-    {where: {id: req.params.id }, returning: true, });
-    // console.log()
-    res.redirect(`/users/profile/${req.params.Id}`); 
+  const userProfile = await UserModel.update(req.body, 
+    {where: { id: req.params.id }, returning: true, });
+    res.redirect(`/users/profile/${req.params.id}`); 
 });
 
 router.delete("/:id", async (req, res) => {
-  await User.destroy({where: { id: req.params.id } });
+  await UserModel.destroy({where: { id: req.params.id } });
   res.redirect("/");
 });
 

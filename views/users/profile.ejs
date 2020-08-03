@@ -10,19 +10,21 @@
     <h1>Welcome to <%= user.name %>'s Profile Page</h1>
 
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
-      Name: <input type="text" name="name" value="<%=user.firstname%>" /><br />
+      First Name: <input type="text" name="firstname" value="<%=user.firstname%>" /><br />
+      <br />
+      Last Name: <input type="text" name="lastname" value="<%=user.lastname%>" /><br />
       <br />
       Username:
       <input type="text" name="username" value="<%=user.username%>" />
       <br />
       <br />
       Password:
-      <input type="text" name="password" value="<%=user.password%>" /><br />
+      <input type="password" name="password" value="<%=user.password%>" /><br />
       <br />
-      <input type="submit" value="Edit Profile" />
+      <input type="submit" value="Update Profile" />
     </form>
     <br />
-    <form action="/users/<%= user.userId %>?_method=DELETE" method="POST">
+    <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
       <input type="submit" value="Delete User" />
     </form>
 
