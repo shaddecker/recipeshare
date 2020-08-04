@@ -16,38 +16,30 @@ router.get("/new", async (req, res) => {
     res.render("recipes/new.ejs",{ categories: categories });
 });
 
-// // SHOW ROUTE - GET ONE FRUIT
-// router.get("/:id", (req, res) => {
-//   Fruit.findByPk(req.params.id, {
-//       // include : [User]  <= this method returns all columns
-//       include : [
-//       {
-//         model: User,
-//         attributes: ['name'],
-//       },
-//       {
-//         model: Season,
-//       },
-//       ],
-//     attributes: ['name', 'color', 'readyToEat']
-//   })
-//   .then(fruitFromDB => {
-//       res.render('fruits/show.ejs', {
-//           fruit: fruitFromDB
-//       });
-//   })
-// })
+// SHOW ROUTE 
+router.get("show/:id", async (req, res) => {   
+  const a = await RecipeHeader.findByPk(req.params.id);
+    //   include : [
+    //   {
+    //     model: User,
+    //     attributes: ['name'],
+    //   },
+    //   {
+    //     model: Season,
+    //   },
+    //   ],
+    // attributes: ['name', 'color', 'readyToEat']
+    console.log(recipeFromDB);
+  res.render('recipes/show.ejs', {recipe: recipeFromDB });
+});
 
-// //post route
-// router.post("/", async (req, res) => {
-//   if (req.body.readyToEat === "on") {
-//     req.body.readyToEat = true;
-//   } else {
-//     req.body.readyToEat = false; 
-//   }
-//   const newFruit = await Fruit.create(req.body);
-//   res.redirect("/fruits");
-// });
+//post route for new recipe
+router.post("/", async (req, res) => {
+  const newRecipe = await RecipeHeader.create(req.body);
+  console.log(newRecipe)
+  res.redirect(`show/${newRecipe.id}`);
+});
+
 
 // router.get("/:id/edit", async (req, res) => {
 //   const foundFruit = await Fruit.findByPk(req.params.id);

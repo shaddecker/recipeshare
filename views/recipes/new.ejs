@@ -15,9 +15,9 @@
           <div>Description: <input type="text" name="description" /></div>
             <div>Category: 
                 <select name="category">
-                <option value="<--Choose a category-->"></option>
-                <% for (let j = 0; j<categories.length;j++){ %>)
-                  <option value="<% categories[j].id %>"><% categories[j].name %> test</option>
+                <option value=""><--Choose a category--></option>
+                <% for (let j = 0; j < categories.length; j++ ){ %>)
+                  <option value="<%=categories[j].id %>"><%=categories[j].name %></option>
                   <% } %>
                 </select></div>
               <div>Instructions<textarea rows="10" cols="50" name="instructions"></textarea></div>
