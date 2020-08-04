@@ -4,27 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="/css/app.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <title></title>
   </head>
 
   <body>
     <h1>Add a new recipe!</h1>
-    <div class="verticleContainer">
+    <div class="container">
       <form action="/recipes" method="POST">
-        <div>Title <input type="text" name="title" /></div>
-          <div>Description: <input type="text" name="description" /></div>
+        <div>Title <input type="text" name="title" class="title" placeholder="Your Recipe Title" /></div>
+          <div>Description: <input type="text" name="description" class="description" placeholder="Recipe Description"  /></div>
             <div>Category: 
                 <select name="category">
+                  <option value=""><== Choose One ==>></option>
                   <option value="Entree">Entree</option>
-                  <option value="Entree">Casserole</option>
-                  <option value="Entree">Side Dish</option>
-                  <option value="Entree">Appetizer</option>
-                  <option value="Entree">Dessert</option>
-                  <option value="Entree">Salad</option>
+                  <option value="Casserole">Casserole</option>
+                  <option value="Side Dish">Side Dish</option>
+                  <option value="Appetizer">Appetizer</option>
+                  <option value="Dessert">Dessert</option>
+                  <option value="Salad">Salad</option>
                 </select></div>
             <div class="ingredients"> 
-              <div class="ingredients">Ingredients<textarea rows="10" cols="50" name="ingredients"></textarea>
-              <div class="instructions">Instructions<textarea rows="10" cols="50" name="instructions"></textarea></div>
+              <div class="ingredients"><textarea rows="10" cols="50" name="ingredients" placeholder="Recipe Ingredients" ></textarea>
+              <div class="instructions"><textarea rows="10" cols="50" name="instructions" placeholder="Recipe Insructions" ></textarea></div>
             <div><input type="submit" name="" value="Add Recipe" /><div>
       </form>
     </div>

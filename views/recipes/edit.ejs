@@ -4,27 +4,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="/css/app.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <title></title>
   </head>
 
   <body>
     <h1>Edit your recipe</h1>
     <form action="/recipes/<%= recipe.id%>?_method=PUT" method="POST">
-    <div class="back">      
-        <div>Title: <input type="text" name="title" value="<%=recipe.title %>" /></div>
-        <div>Description: <input type="text" name="description" value="<%=recipe.description %>" /></div>
+    <div class="container">      
+        <div>Title: <input class="title" type="text" name="title" value="<%=recipe.title %>" /></div>
         <div>Category
-        <select name="category">
+        <select name="category" class="category">
           <option value="<%= recipe.category%>"><%= recipe.category%></option>
           <option value="Entree">Entree</option>
-          <option value="Entree">Casserole</option>
-          <option value="Entree">Side Dish</option>
-          <option value="Entree">Appetizer</option>
-          <option value="Entree">Dessert</option>
-          <option value="Entree">Salad</option>
+          <option value="Casserole">Casserole</option>
+          <option value="Side Dish">Side Dish</option>
+          <option value="Appetizer">Appetizer</option>
+          <option value="Dessert">Dessert</option>
+          <option value="Salad">Salad</option>
         </select></div>
-        <div>Ingredients: <textarea rows="20" cols="75" name="Ingredients"><%=recipe.ingredients %></textarea> </div>
-        <div>Instructions: <textarea rows="20" cols="75" name="instructions"><%=recipe.instructions %></textarea> </div>
+        <div><textarea  class="ingredients" rows="10" cols="50" name="Ingredients"><%=recipe.ingredients %></textarea> </div>
+        <div><textarea  class="instructions" rows="10" cols="50" name="instructions"><%=recipe.instructions %></textarea> </div>
         <div><input type="submit" name="sumbit" value="Submit Changes" /></div>
          </div> 
         </form>

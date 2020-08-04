@@ -4,19 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="/css/app.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <title></title>
   </head>
 
   <body>
     <h1>Recipe Information</h1>
     <div class="container">
-    <div>Recipe Title: <%=recipe.title%></div>
-    <div>Description: <%=recipe.description%></div>
-    <div>Type of dish: <%=recipe.category%></div>
-    <div>Ingredients: <%=recipe.ingredients%></div>
-    <div>Instructions: <%=recipe.instructions%></div>
-    <div></div>
-    <div ><a href="/recipes/<%=recipe.id%>/edit">Make changes to this recipe.</a></div>
+    <div class="title"><%=recipe.title%></div>
+    <div class="category"><%=recipe.category%></div>
+    <div class="ingredients"><%=recipe.ingredients%></div>
+    <div class="instructions"><%=recipe.instructions%></div>
+    <div class="spacer"></div>
+    <div><a href="/recipes/<%=recipe.id%>/edit">Make changes to this recipe.</a></div>
     <div><a href="/recipes">Back to All Recipes</a></div>
   </div>
   </body>
