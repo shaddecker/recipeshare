@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <title></title>
+  </head>
+
+  <body>
+    <h1>Add a new recipe!</h1>
+    <div class="verticleContainer">
+      <form action="/recipes" method="POST">
+        <div>Title <input type="text" name="title" /></div>
+          <div>Description: <input type="text" name="description" /></div>
+            <div>Category: 
+                <select name="category">
+                <option value="<--Choose a category-->"></option>
+                <% for (let j = 0; j<categories.length;j++){ %>)
+                  <option value="<% categories[j].id %>"><% categories[j].name %> test</option>
+                  <% } %>
+                </select></div>
+              <div>Instructions<textarea rows="10" cols="50" name="instructions"></textarea></div>
+                <div><input type="submit" name="" value="Add Recipe" /><div>
+      </form>
+    </div>
+  </body>
+</html>
