@@ -15,13 +15,17 @@
           <div>Description: <input type="text" name="description" /></div>
             <div>Category: 
                 <select name="category">
-                <option value=""><--Choose a category--></option>
-                <% for (let j = 0; j < categories.length; j++ ){ %>)
-                  <option value="<%=categories[j].id %>"><%=categories[j].name %></option>
-                  <% } %>
+                  <option value="Entree">Entree</option>
+                  <option value="Entree">Casserole</option>
+                  <option value="Entree">Side Dish</option>
+                  <option value="Entree">Appetizer</option>
+                  <option value="Entree">Dessert</option>
+                  <option value="Entree">Salad</option>
                 </select></div>
-              <div>Instructions<textarea rows="10" cols="50" name="instructions"></textarea></div>
-                <div><input type="submit" name="" value="Add Recipe" /><div>
+            <div class="ingredients"> 
+              <div class="ingredients">Ingredients<textarea rows="10" cols="50" name="ingredients"></textarea>
+              <div class="instructions">Instructions<textarea rows="10" cols="50" name="instructions"></textarea></div>
+            <div><input type="submit" name="" value="Add Recipe" /><div>
       </form>
     </div>
   </body>

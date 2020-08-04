@@ -12,15 +12,12 @@
     <div class="container">
     <div>Recipe Title: <%=recipe.title%></div>
     <div>Description: <%=recipe.description%></div>
-    <div>Type of dish: <%=recipe.RecipeCategories.name%></div>
-    <div></div>
+    <div>Type of dish: <%=recipe.category%></div>
+    <div>Ingredients: <%=recipe.ingredients%></div>
     <div>Instructions: <%=recipe.instructions%></div>
     <div></div>
-
-    <div class="back">
-     
-    </div>
-    <a href="/recipes">Back to All Recipes</a>
+    <div ><a href="/recipes/<%=recipe.id%>/edit">Make changes to this recipe.</a></div>
+    <div><a href="/recipes">Back to All Recipes</a></div>
   </div>
   </body>
 </html>
