@@ -17,19 +17,15 @@ router.get("/new", async (req, res) => {
 });
 
 // SHOW ROUTE 
-router.get("show/:id", async (req, res) => {   
-  const a = await RecipeHeader.findByPk(req.params.id);
-    //   include : [
-    //   {
-    //     model: User,
-    //     attributes: ['name'],
-    //   },
-    //   {
-    //     model: Season,
-    //   },
-    //   ],
-    // attributes: ['name', 'color', 'readyToEat']
-    console.log(recipeFromDB);
+router.get("/:id", async (req, res) => {   
+  const recipeFromDB = await RecipeHeader.findByPk(req.params.id,{
+      include : [
+      {
+        model: RecipeCategories,
+        attributes: ['name'],
+      },
+    ],
+});
   res.render('recipes/show.ejs', {recipe: recipeFromDB });
 });
 
@@ -37,7 +33,7 @@ router.get("show/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   const newRecipe = await RecipeHeader.create(req.body);
   console.log(newRecipe)
-  res.redirect(`show/${newRecipe.id}`);
+  res.redirect(`recipes/${newRecipe.id}`);
 });
 
 
@@ -71,10 +67,10 @@ router.post("/", async (req, res) => {
 // });
 
 
-// router.delete("/:id", async (req, res) => {
-//   await Fruit.destroy({where: { id: req.params.id } });
-//     res.redirect("/fruits");
-// });
+router.delete("/:id", async (req, res) => {
+  await RecipeHeaders.destroy({where: { id: req.params.id } });
+    res.redirect("/recipes");
+});
 
 
 module.exports = router;

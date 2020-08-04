@@ -8,22 +8,22 @@
   </head>
 
   <body>
-    <h1>Edit a fruit!</h1>
-    <!--  NOTE: the form is prepopulated with values from the server-->
-    <div class="back">
-      <form action="/fruits/<%= fruit.id%>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="<%=fruit.name %>" /><br />
-        Color: <input type="text" name="color" value="<%=fruit.color %>" /><br />
-        Is Ready To Eat: <input type="checkbox" name="readyToEat" <% if(fruit.readyToEat === true){ %> checked <% } %>/>
-        <select name="season">
-          <% for ( let i = 0; i < seasons.length; i++ ) { let selected = ( i == 0
+    <h1>Edit your recipe</h1>
+    <form action="/recipes/<%= recipe.id%>?_method=PUT" method="POST"></form>
+    <div class="back">      
+        <div>Title: <input type="text" name="title" value="<%=recipe.title %>" /></div>
+        <div>Description: <input type="text" name="description" value="<%=recipe.description %>" /></div>
+        <div>Category
+        <select name="category">
+          <% for ( let i = 0; i < categories.length; i++ ) { let selected = ( i == 0
           ) ? "selected" : ""; %>
-          <option value="<%=seasons[i].id%>" selected
-            ><%=seasons[i].name%>
+          <option value="<%=categories[i].id%>" selected
+            ><%=categories[i].name%>
           </option>
           <% } %>
-        </select>
-        <input type="submit" name="" value="Submit Changes" />
+        </select></div>
+        <div>Instructions: <textarea rows="20" cols="75" name="instructions"><%=recipe.instructions %></textarea> </div>
+        <div><input type="submit" name="" value="Submit Changes" /></div>
       </form>
     </div>
   </body>
