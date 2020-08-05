@@ -5,6 +5,7 @@ const RecipeModel = require("../models").Recipe;
 
 //index route
 router.get("/", async (req, res) => {
+    console.log(req.user);
     const allRecipes = await RecipeModel.findAll()
     res.render("recipes/index.ejs", { recipes: allRecipes,});
 });

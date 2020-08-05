@@ -12,9 +12,9 @@
     <h1>Edit your recipe</h1>
     <form action="/recipes/<%= recipe.id%>?_method=PUT" method="POST">
     <div class="container">      
-        <div>Title: <input class="title" type="text" name="title" value="<%=recipe.title %>" /></div>
-        <div>Category
-        <select name="category" class="category">
+        <div><input class="titleEdit" type="text" name="title" placeholder="Recipe Title" value="<%=recipe.title %>" /></div>
+        <div>
+        <select name="category" class="categoryEdit">
           <option value="<%= recipe.category%>"><%= recipe.category%></option>
           <option value="Entree">Entree</option>
           <option value="Casserole">Casserole</option>
@@ -23,8 +23,8 @@
           <option value="Dessert">Dessert</option>
           <option value="Salad">Salad</option>
         </select></div>
-        <div><textarea  class="ingredients" rows="10" cols="50" name="Ingredients"><%=recipe.ingredients %></textarea> </div>
-        <div><textarea  class="instructions" rows="10" cols="50" name="instructions"><%=recipe.instructions %></textarea> </div>
+        <div><textarea  class="ingredientsEdit" rows="10" cols="50" name="Ingredients" placeholder="Ingredients"><%=recipe.ingredients %></textarea> </div>
+        <div><textarea  class="instructionsEdit" rows="10" cols="50" name="instructions" placeholder="Instructions"><%=recipe.instructions %></textarea> </div>
         <div><input type="submit" name="sumbit" value="Submit Changes" /></div>
          </div> 
         </form>

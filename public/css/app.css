@@ -16,6 +16,7 @@ h1{
 }
 .title{
     width: 300px;
+    font-family: "Roboto";
     font-size: 24px;
     margin-bottom: 10px;
     color: yellow;
@@ -23,17 +24,44 @@ h1{
 .category{
     width: 300px;
     margin-bottom: 10px;
+    font-family: "Roboto";
     color: lightskyblue;
     
 }
 .ingredients{
     width: 300px;
     margin-bottom: 10px;
-    
+    font-family: "Roboto";
+    white-space: pre-line;
 }
 .instructions{
     width: 300px;
     margin-bottom: 10px;
+    font-family: "Roboto";
+    white-space: pre-line;
+}
+.titleEdit{
+    width: 300px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: black;
+    font-family: "Roboto";
+}
+.categoryEdit{
+    width: 300px;
+    margin-bottom: 10px;
+    color: black;
+    font-family: "Roboto";
+}
+.ingredientsEdit{
+    width: 300px;
+    margin-bottom: 10px;
+    font-family: "Roboto";
+}
+.instructionsEdit{
+    width: 300px;
+    margin-bottom: 10px;
+    font-family: "Roboto";
 }
 .spacer{
     height: 20px;
@@ -81,6 +109,12 @@ li {
     padding: 5px;
 }       
 
+textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: "Roboto";
+}
 /* 
 
 .horizontalContainer {
