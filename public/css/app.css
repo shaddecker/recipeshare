@@ -21,24 +21,43 @@ h1{
     margin-bottom: 10px;
     color: yellow;
 }
+.submittedBy{
+    width: 300px;
+    font-family: "Roboto";
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: white;
+}
 .category{
     width: 300px;
     margin-bottom: 10px;
     font-family: "Roboto";
-    color: lightskyblue;
+    color: white;
     
 }
 .ingredients{
     width: 300px;
     margin-bottom: 10px;
     font-family: "Roboto";
+    color: black;
     white-space: pre-line;
+    border-radius: 10px;
+    border: none;
+    background-color: linen;
+    height: auto;
+    padding: 10px;
 }
 .instructions{
     width: 300px;
     margin-bottom: 10px;
     font-family: "Roboto";
+    color: black;
     white-space: pre-line;
+    border-radius: 10px;
+    border: none;
+    background-color: linen;
+    height: auto;
+    padding: 10px;
 }
 .titleEdit{
     width: 300px;

@@ -13,7 +13,8 @@ const verifyToken = (req, res, next) => {
 
   jwt.verify(token, process.env.JWT_SECRET, (err, decodedUser) => {
     if (err || !decodedUser) {
-      return res.status(401).json({ error: "Unauthorized Request" });
+      // return res.status(401).json({ error: "Unauthorized Request" });
+      res.redirect("/");
     }
     req.user = decodedUser;
     // ADDS A .user PROP TO REQ FOR TOKEN USER
@@ -35,7 +36,7 @@ app.get("/", (req, res) => {
 
 app.use("/auth", require("./controllers/authController.js"));
 app.use("/users", verifyToken, require("./controllers/usersController.js"));
-app.use("/recipes", require("./controllers/recipeController.js"));
+app.use("/recipes", verifyToken, require("./controllers/recipeController.js"));
 
 app.listen(process.env.PORT, () => {
   console.log("Nodemon listening");

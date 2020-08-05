@@ -5,8 +5,13 @@ const UserModel = require("../models").User;
 
 // GET USERS PROFILE
 router.get("/profile/:id", async (req, res) => {
- const userProfile = await  UserModel.findByPk(req.params.id)
-  res.render("users/profile.ejs", { user: userProfile });
+  if (req.user.id == req.params.id) {
+    const userProfile = await  UserModel.findByPk(req.params.id)
+    res.render("users/profile.ejs", { user: userProfile, cookieId: req.user.id });
+  } else {
+    // res.json("unauthorized");
+    res.redirect("/");
+  }
 });
 
 
@@ -14,7 +19,7 @@ router.get("/profile/:id", async (req, res) => {
 router.put("/profile/:id", async (req, res) => {
   const userProfile = await UserModel.update(req.body, 
     {where: { id: req.params.id }, returning: true, });
-    res.redirect(`/users/profile/${req.params.id}`); 
+    res.redirect(`/users/profile/${req.params.id}`);   
 });
 
 router.delete("/:id", async (req, res) => {

@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/app.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <title>User Profile Page</title>
+    <title>Recipe Share - User Profile Page</title>
   </head>
 
   <body>
     <h1>Welcome to <%= user.name %>'s Profile Page</h1>
-
+    <nav>
+      <% if(!cookieId){%><a href="/auth/signup">Sign Up  |<% } %></a>
+      <% if(!cookieId){%><a href="/auth/login">Log In  |<% } %></a>
+      <a href="/auth/logout">Log Out</a>
+    </nav>
+    <div class="spacer"></div>
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
       First Name: <input type="text" name="firstname" value="<%=user.firstname%>" /><br />
       <br />

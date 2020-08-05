@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-
 const RecipeModel = require("../models").Recipe;
+const UserModel = require("../models").User;
 
 //index route
 router.get("/", async (req, res) => {
-    console.log(req.user);
+    // console.log(req.user);
     const allRecipes = await RecipeModel.findAll()
     res.render("recipes/index.ejs", { recipes: allRecipes,});
 });
@@ -17,8 +17,9 @@ router.get("/new", async (req, res) => {
 
 // SHOW ROUTE 
 router.get("/:id", async (req, res) => {   
-  const recipeFromDB = await RecipeModel.findByPk(req.params.id);
-  res.render('recipes/show.ejs', {recipe: recipeFromDB });
+  const recipeFromDB = await RecipeModel.findByPk(req.params.id, {include: [UserModel],});
+  // console.log(recipeFromDB)
+  res.render('recipes/show.ejs', {recipe: recipeFromDB, cookieId: req.user.id });
 });
 
 //post route for new recipe
@@ -28,10 +29,11 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/:id/edit", async (req, res) => {
-  const foundRecipe = await RecipeModel.findByPk(req.params.id);
-  res.render("recipes/edit.ejs", {
-    recipe: foundRecipe
-  });
+    const foundRecipe = await RecipeModel.findByPk(req.params.id);
+    res.render("recipes/edit.ejs", {
+      recipe: foundRecipe
+    });
+  
 });
 
 //put route
