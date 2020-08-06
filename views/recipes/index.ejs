@@ -9,6 +9,11 @@
 
   <body>
     <h1>Recipe Share</h1>
+    <nav>
+      <% if(!cookieId){%><a href="/auth/signup">Sign Up  |<% } %></a>
+      <% if(!cookieId){%><a href="/auth/login">Log In  |<% } %></a>
+      <a href="/auth/logout">Log Out</a>
+    </nav>
     <div class="container">
       <nav class="nav">
         <a href="/recipes/new">Add a New Recipe</a>

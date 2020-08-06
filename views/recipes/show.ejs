@@ -10,9 +10,15 @@
 
   <body>
     <h1>Recipe Information</h1>
+    <div class="spacer"></div>
+    <nav>
+      <% if(!cookieId){%><a href="/auth/signup">Sign Up  |<% } %></a>
+      <% if(!cookieId){%><a href="/auth/login">Log In  |<% } %></a>
+      <a href="/auth/logout">Log Out</a>
+    </nav>
     <div class="container">
     <div class="title"><%=recipe.title%></div>
-    <div class="submittedBy">Submitted by: <%=recipe.User.firstname%> <%=recipe.User.lastname%></div>
+    <div class="submittedBy">Submitted by: <%=submittedBy%></div>
     <div class="category"><%=recipe.category%></div>
     <div class="ingredients"><%=recipe.ingredients%></div>
     <div class="instructions"><%=recipe.instructions%></div>
