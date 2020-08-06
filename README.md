@@ -4,9 +4,10 @@ My first Full Stack Application!
 
 ## Recipe Share
 
-The application can be found here.
 This is my attempt to create a shareable recipe list.  Users must sign up in order to share and view any recipes.  Users can only edit and delete recipes that belong to them, but they can view all recipes from the index page.  Clicking a recipe title takes the user to a formatted recipe show page.  From there they can edit or delete if the recipe belongs to them.
 This application adheres to the models, views, and controllers file structure.  There are 2 models, both of which have 7 RESTful routes and full CRUD.
+
+###The application can be found here.
 
 ## Technologies Used
 
