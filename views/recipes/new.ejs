@@ -10,7 +10,15 @@
 
   <body>
     <h1>Add a new recipe!</h1>
+    <nav>
+      <% if(!cookieId){%><a href="/auth/signup">Sign Up  ||<% } %></a>
+      <% if(!cookieId){%><a href="/auth/login">Log In  ||<% } %></a>
+      <a href="/auth/logout">Log Out  ||</a>
+      <a href="/users/profile/<%=cookieId%>">My Profile</a>
+    </nav>
+    <div class="spacer"></div>
     <div class="container">
+      
       <form action="/recipes" method="POST">
         <div><input type="text" name="title" class="titleNew" placeholder="Your Recipe Title" /></div>
             <div>

@@ -11,9 +11,10 @@
   <body>
     <h1>Edit your recipe</h1>
     <nav>
-      <% if(!cookieId){%><a href="/auth/signup">Sign Up  |<% } %></a>
-      <% if(!cookieId){%><a href="/auth/login">Log In  |<% } %></a>
-      <a href="/auth/logout">Log Out</a>
+      <% if(!cookieId){%><a href="/auth/signup">Sign Up  ||<% } %></a>
+      <% if(!cookieId){%><a href="/auth/login">Log In  ||<% } %></a>
+      <a href="/auth/logout">Log Out  ||</a>
+      <a href="/users/profile/<%=cookieId%>">My Profile</a>
     </nav>
     <div class="spacer"></div>
     <form action="/recipes/<%= recipe.id%>?_method=PUT" method="POST">

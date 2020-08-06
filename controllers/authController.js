@@ -76,7 +76,7 @@ router.post("/login", (req, res) => {
               expiresIn: "30 days",
             }
           );
-          console.log(token);
+          // console.log(token);
           res.cookie("jwt", token); // SEND A NEW COOKIE TO THE BROWSER TO STORE TOKEN
           res.redirect(`/users/profile/${foundUser.id}`);
         } else {

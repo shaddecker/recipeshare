@@ -34,10 +34,22 @@
     <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
       <input type="submit" value="Delete User" />
     </form>
-
     <div class="spacer"></div>
     <div class=""><a href="/recipes">Recipes Index</a></div>
     <div class="spacer"></div>
-    <a href="/">Back to Homepage</a>
+
+    <div class="spacer"></div>
+    <div class="">Your Recipes</div>
+    <div class="spacer"></div>
+    <div >
+      <ul>
+        <% for(let i = 0; i < recipeList.length; i++){ %>
+        <li>
+          <a href="/recipes/<%=recipeList[i].id%>"><%= recipeList[i].title %></a>          
+          
+        </li>
+        <% }; %>
+      </ul>
+    </div>
   </body>
 </html>
