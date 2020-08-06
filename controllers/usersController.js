@@ -9,14 +9,13 @@ router.get("/profile/:id", async (req, res) => {
     const userProfile = await  UserModel.findByPk(req.params.id,{
       include: [ { model: RecipeModel, },],
     });  
-    console.log(user) ;
+    console.log(userProfile.Recipe) ;
     res.render("users/profile.ejs", { user: userProfile, cookieId: req.user.id });
   } else {
     // res.json("unauthorized");
     res.redirect("/");
   }
 });
-
 
 //PUT an update route
 router.put("/profile/:id", async (req, res) => {
