@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>Recipe Share</title>
-    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" href="/css/app.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <h1>Recipe Share</h1>
+    <h1>Recipe Share - Search Results</h1>
     <nav>
       <% if(!cookieId){%><a href="/auth/signup">Sign Up  ||<% } %></a>
       <% if(!cookieId){%><a href="/auth/login">Log In  ||<% } %></a>
@@ -20,12 +20,6 @@
       <nav class="nav">
         <a href="/recipes/new">Add a New Recipe</a>
       </nav>
-      <div class="spacer"></div>
-      <div>
-        <form action="/recipes/search/" method="POST">
-          <input class="search" type="text" name="search" placeholder="Enter keywords to search here"> 
-          <input type="submit" value="Search"></form>
-      </div>
      <div >
       <ul>
         <% for(let i = 0; i < recipes.length; i++){ %>

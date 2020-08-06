@@ -7,9 +7,9 @@ const RecipeModel = require("../models").Recipe;
 router.get("/profile/:id", async (req, res) => {
   if (req.user.id == req.params.id) {
     const userProfile = await  UserModel.findByPk(req.params.id,{
-      include: [ { model: RecipeModel, },],
+      include: [ { model: RecipeModel }]
     });  
-    console.log(userProfile.Recipe) ;
+    console.log(userProfile.Recipes) ;
     res.render("users/profile.ejs", { user: userProfile, cookieId: req.user.id });
   } else {
     // res.json("unauthorized");

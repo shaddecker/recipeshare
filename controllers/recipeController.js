@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const RecipeModel = require("../models").Recipe;
 const UserModel = require("../models").User;
+const { Op } = require("sequelize"); 
 
 function formatDate(theDate){
   var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -17,6 +18,15 @@ router.get("/", async (req, res) => {
     // console.log(req.user);
     const allRecipes = await RecipeModel.findAll()
     res.render("recipes/index.ejs", { recipes: allRecipes, cookieId: req.user.id,});
+});
+
+router.post("/search", async (req, res) => {
+  console.log("req.body", req.body);
+  const searchRecipes = await RecipeModel.findAll({
+    where: { title: { [Op.iLike]: `%${req.body.search}%`}}
+  });
+  console.log(searchRecipes)
+  res.render("recipes/searchResults.ejs", { recipes: searchRecipes, cookieId: req.user.id,});
 });
 
 //new recipe route
