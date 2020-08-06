@@ -43,9 +43,9 @@
     <div class="spacer"></div>
     <div >
       <ul>
-        <% for(let i = 0; i < recipeList.length; i++){ %>
+        <% for(let i = 0; i < user.Recipes.length; i++){ %>
         <li>
-          <a href="/recipes/<%=recipeList[i].id%>"><%= recipeList[i].title %></a>          
+          <a href="/recipes/<%=user.Recipes[i].id%>"><%= user.Recipes[i].title %></a>      
           
         </li>
         <% }; %>
