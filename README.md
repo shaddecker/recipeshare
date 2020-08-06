@@ -1,4 +1,4 @@
-# Project #2
+# Project #2 - Recipe Share
 
 My first Full Stack Application!
 
