@@ -41,8 +41,8 @@ User Stories List:
  9. As a user I would like to be able to easily find the recipes I have submitted.
  10. As a user I would expect the site to be secure.
 
-## Wireframe
-![My wireframe](/public/css/images/wireframe.jpg)
+## Wireframe Document
+![My wireframe](/css/images/wireframe.jpg)
 
 ## Bugs and unfinished stuff
 
