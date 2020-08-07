@@ -42,7 +42,7 @@ User Stories List:
  10. As a user I would expect the site to be secure.
 
 ## Wireframe Document
-![My wireframe](/css/images/wireframe.jpg)
+![My wireframe](https://shads-recipe-share.herokuapp.com/css/images/wireframe.jpg)
 
 ## Bugs and unfinished stuff
 
